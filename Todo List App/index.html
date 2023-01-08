@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="input.css" />
+  </head>
+  <body class="box-border bg-gradient-to-b from-[#68EACC] to-[#497BE8]">
+    <div class="h-screen mt-10">
+      <div class="bg-white max-w-[80%] w-96 m-auto font-bold p-3 rounded-md">
+        <h2 class="text-left text-2xl mb-3">Todo App</h2>
+        <div class="flex justify-between space-x-2 h-11">
+          <input
+            type="text"
+            placeholder="Add your new todo"
+            class="w-full input_task"
+          />
+          <button
+            class="text-white bg-purple-600 rounded w-11 text opacity-60"
+            id="inputBtn"
+          >
+            +
+          </button>
+        </div>
+        <ul id="tasks"></ul>
+        <span class="flex mt-3 justify-between">
+          <p>You have <span id="pendingTask"></span> pending tasks</p>
+          <button
+            id="clearAll"
+            class="text-white bg-purple-600 h-10 text-sm p-2 rounded justify-self-end opacity-60 active:opacity-100"
+          >
+            Clear All
+          </button>
+        </span>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
