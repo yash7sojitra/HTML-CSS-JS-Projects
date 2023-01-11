@@ -42,6 +42,11 @@ body {
     width: 100%;
 }
 
+.wrapper .content.disable {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
 .content .column {
     border: 1px solid #999;
     border-radius: 5px;
