@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hamburger Menu</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      /* Hamburger icon */
+      .hamburger {
+        display: inline-block;
+        cursor: pointer;
+        padding: 8px 10px;
+      }
+
+      /* Hamburger bars */
+      .bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 4px 0;
+        background-color: black;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+
+      /* Hamburger animation */
+      .bar1.rotate45 {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .bar2.fadeout {
+        opacity: 0;
+      }
+
+      .bar3.rotate-45 {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      /* Menu */
+      .menu {
+        display: none;
+        position: relative;
+        top: 40px;
+        background-color: white;
+        padding: 10px;
+        border: 1px solid black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Show menu when checkbox is checked */
+      #menu-toggle:checked ~ .menu {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hamburger icon and menu toggle -->
+    <label for="menu-toggle" class="hamburger">
+      <span class="bar bar1"></span>
+      <span class="bar bar2"></span>
+      <span class="bar bar3"></span>
+    </label>
+    <input type="checkbox" id="menu-toggle" />
+
+    <!-- Menu -->
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
