@@ -2,6 +2,7 @@ let cells = document.querySelectorAll(".cell");
 let player = document.querySelector(".player");
 let restartBtn = document.querySelector(".restart-game");
 let playerTurn = "X";
+let gameOver = false;
 const winningPositions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -21,6 +22,7 @@ const checkForWin = () => {
     if (check) {
       highlightCells(positions);
       inactiveCells();
+      gameOver = true;
     }
   });
 };
@@ -36,20 +38,17 @@ const inactiveCells = () => {
 };
 
 cells.forEach((cell) => {
-  cell.addEventListener("click", () => {
+  cell.addEventListener("click", async () => {
     if (cell.innerHTML !== "") return;
 
     cell.innerHTML = playerTurn;
+    count++;
 
     checkForWin();
 
-    console.log(count);
-    //Checking the draw condition
-
     playerTurn = playerTurn == "X" ? "O" : "X";
     player.innerHTML = `${playerTurn}'s turn`;
-    count++;
-    if (count == 9) {
+    if (!gameOver && count == 9) {
       alert("Draw!");
       inactiveCells();
     }
